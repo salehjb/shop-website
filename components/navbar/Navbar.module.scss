@@ -1,0 +1,118 @@
+@use "../../scss/" as *;
+
+.navbar_container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #000;
+  color: $text-color;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+  .navbar_logo {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin-right: 0.5rem;
+      font-size: 25px;
+    }
+  }
+
+  .menu_bar {
+    display: none;
+    font-size: 1.5rem;
+    z-index: 20;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  .navbar_links {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      position: fixed;
+      right: -100%;
+      bottom: 0;
+      flex-direction: column;
+      background-color: #000;
+      height: 100%;
+      z-index: 10;
+      transition: all 0.3s;
+
+      &.active {
+        right: 0;
+      }
+    }
+
+    .active_link {
+      color: blue;
+    }
+
+    .all_links {
+      display: flex;
+      align-items: center;
+
+      @include tablet {
+        margin-top: 5rem;
+        flex-direction: column;
+        align-items: flex-end;
+        height: 100%;
+        width: 200px;
+
+        & > * {
+          width: 100%;
+          height: 50px;
+          text-align: right;
+          border-bottom: 1px solid #fff;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+
+      a {
+        padding: 0 1.8rem;
+        font-size: 1.2rem;
+        display: flex;
+
+        @include tablet {
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+        }
+
+        .cart_items_count {
+          width: 20px;
+          height: 20px;
+          position: relative;
+          background-color: blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          font-size: 0.8rem;
+          top: -10px;
+          left: -10px;
+          text-align: center;
+        }
+
+        // Styles for shopping cart icon
+        &:last-child {
+          font-size: 1.4rem;
+          padding: 0;
+          margin-left: 3.5rem;
+
+          @include tablet {
+            margin-left: 0;
+            padding: 0 1rem;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

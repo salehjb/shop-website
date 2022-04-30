@@ -1,0 +1,136 @@
+@use "../../scss/" as *;
+
+.cart_container {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .cart_content_container {
+    width: 60%;
+    height: 70%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+
+      &-track {
+        background: #cecece;
+        border-radius: 0.5rem;
+      }
+
+      &-thumb {
+        background: #989898;
+        border-radius: 0.5rem;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      width: 100%;
+      height: 100%;
+      justify-content: flex-start;
+    }
+
+    .cart_header {
+      border-bottom: 1px solid #000;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5rem;
+
+      .clear_cart_container {
+        .clear_cart {
+          color: #fff;
+          font-size: 1.2rem;
+          font-weight: bold;
+          cursor: pointer;
+          background-color: red;
+          border: none;
+          outline: none;
+          border-radius: 0.5rem;
+          padding: 0.5rem 1rem;
+          pointer-events: none;
+          opacity: 0.5;
+
+          &.active {
+            pointer-events: all;
+            opacity: 1;
+          }
+
+          @include tablet {
+            font-size: 0.7rem;
+            padding: 0.8rem 0.8rem;
+          }
+        }
+      }
+
+      h1 {
+        font-size: 1.5rem;
+
+        @include tablet {
+          font-size: 1rem;
+        }
+      }
+
+      .cart_total_price {
+        display: flex;
+        align-items: center;
+
+        .cart_total_price_value {
+          background-color: green;
+          color: #fff;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+        }
+
+        & > * {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    .cart_empty {
+      .cart_empty_text {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+          height: 80vh;
+        }
+
+        h1 {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #000;
+        }
+
+        p {
+          font-size: 1.2rem;
+          text-align: center;
+        }
+
+        & > * {
+          margin-bottom: 1rem;
+        }
+
+      }
+    }
+  }
+}

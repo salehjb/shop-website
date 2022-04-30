@@ -1,0 +1,105 @@
+@use "../../scss/" as *;
+
+.product_container {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+  @include tablet {
+    width: 100%;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .content_container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .product_title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .product_category {
+      font-size: 0.8rem;
+      color: #191919;
+    }
+
+    .product_price {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      background-color: green;
+      text-align: center;
+      padding: 0.5rem;
+      color: #fff;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .product_buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      font-size: 1.1rem;  
+      color: #0000b5;
+      text-decoration: underline;
+    }
+
+    .product_add_button {
+      font-size: 1rem;
+      background-color: #0000b5;
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .increase_decrease_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      button {
+        width: 35px;
+        height: 35px;
+        font-size: 1.5rem;
+        color: #fff;
+        border-radius: 0.5rem;
+        border: none;
+        cursor: pointer;
+      }
+
+      .decrease {
+        background-color: red;
+      }
+
+      .item_quantity {
+        font-size: 1.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        cursor: pointer;
+        margin: 0 1rem;
+      }
+
+      .increase {
+        background-color: green;
+      }
+    }
+  }
+}
